@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=375px, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#f59e0b",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="w-[375px] min-h-[762px] mx-auto bg-gray-50">
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+      <div class="px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img
+            src="https://public.readdy.ai/ai/img_res/a4a947280cc6c1de4c6da90d559c0867.jpg"
+            class="w-8 h-8 object-contain"
+            alt="GameFox Logo"
+          />
+          <div class="text-2xl font-['Pacifico'] text-primary">GameFox</div>
+        </div>
+        <div class="w-8 h-8 flex items-center justify-center">
+          <i class="ri-menu-line text-xl"></i>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-16 pb-20 px-4">
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold mb-2">Contact Us</h1>
+        <p class="text-gray-600 text-sm">
+          Your experience and feedback shape our future. Let's build something
+          amazing together.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+        <h2 class="text-lg font-semibold mb-4">Why Reach Out?</h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div
+              class="w-5 h-5 flex items-center justify-center text-primary mt-1"
+            >
+              <i class="ri-checkbox-circle-line"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Direct CEO Access</h3>
+              <p class="text-sm text-gray-600">
+                Your message goes straight to the top
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div
+              class="w-5 h-5 flex items-center justify-center text-primary mt-1"
+            >
+              <i class="ri-checkbox-circle-line"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Influence GameFox</h3>
+              <p class="text-sm text-gray-600">Shape our next big update</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div
+              class="w-5 h-5 flex items-center justify-center text-primary mt-1"
+            >
+              <i class="ri-checkbox-circle-line"></i>
+            </div>
+            <div>
+              <h3 class="font-medium">Fast Response</h3>
+              <p class="text-sm text-gray-600">Get answers within 24 hours</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form id="contactForm" class="bg-white rounded-lg shadow-sm p-4 mb-6">
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Full Name</label>
+            <input
+              type="text"
+              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input
+              type="email"
+              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Phone Number</label>
+            <input
+              type="tel"
+              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              required
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Message</label>
+            <textarea
+              class="w-full px-3 py-2 border rounded-button h-24 focus:outline-none focus:ring-2 focus:ring-primary/20"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-primary text-white py-3 rounded-button hover:bg-primary/90 transition-colors"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+      <div class="bg-white rounded-lg shadow-sm p-4">
+        <h2 class="text-lg font-semibold mb-4">Get in Touch</h2>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+            >
+              <i class="ri-mail-line text-primary"></i>
+            </div>
+            <a
+              href="mailto:nexusworld0414@gmail.com"
+              class="text-sm text-gray-600"
+              >nexusworld0414@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
+            >
+              <i class="ri-phone-line text-primary"></i>
+            </div>
+            <a href="tel:7428400898" class="text-sm text-gray-600"
+              >+91 7428400898</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      id="successModal"
+      class="fixed inset-0 flex items-center justify-center bg-black/50 hidden"
+    >
+      <div class="bg-white rounded-lg p-6 mx-4 w-full max-w-sm">
+        <div
+          class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4"
+        >
+          <i class="ri-check-line text-2xl text-primary"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-center mb-2">Message Sent!</h3>
+        <p class="text-sm text-gray-600 text-center mb-4">
+          We'll get back to you within 24 hours.
+        </p>
+        <button
+          onclick="closeModal()"
+          class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("contactForm");
+      const modal = document.getElementById("successModal");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        modal.classList.remove("hidden");
+        form.reset();
+      });
+      function closeModal() {
+        modal.classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameFox - The Ultimate Gaming Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+      }
+      .float { animation: float 3s ease-in-out infinite; }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#4f46e5",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white min-h-screen">
+    <section
+      class="pt-24 pb-12 relative overflow-hidden"
+      style="background-image: url('https://public.readdy.ai/ai/img_res/c28f7ad30d17c3ecb9a7b2c678a02c9f.jpg'); background-size: cover; background-position: center;"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"
+      ></div>
+      <div class="max-w-7xl mx-auto px-4 relative">
+        <div class="grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
+          <div>
+            <h1 class="text-5xl font-bold mb-6 leading-tight text-primary">
+              About GameFox
+            </h1>
+            <p class="text-xl text-black-700 mb-8">
+              We're a passionate team dedicated to revolutionizing the gaming
+              industry through innovation, community building, and professional
+              development.
+            </p>
+            <div class="flex space-x-4">
+              <button
+                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition duration-300 text-lg font-semibold"
+              >
+                Our Story
+              </button>
+              <button
+                class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition duration-300 text-lg font-semibold"
+              >
+                Meet the Team
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="values" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-primary">Our Core Values</h2>
+          <p class="text-xl text-black-700">
+            The principles that guide us in creating meaningful impact
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <div class="w-8 h-8 flex items-center justify-center">
+                <i class="ri-heart-line text-primary text-3xl"></i>
+              </div>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Passion for Innovation</h3>
+            <p class="text-gray-700">
+              We constantly push boundaries to create revolutionary gaming
+              experiences that inspire and empower our community.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="ri-shield-star-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Integrity & Trust</h3>
+            <p class="text-gray-700">
+              We maintain the highest standards of transparency and fairness in
+              all our operations and community interactions.
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="ri-global-line text-primary text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Global Impact</h3>
+            <p class="text-gray-700">
+              We're committed to fostering an inclusive gaming ecosystem that
+              transcends geographical boundaries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="history" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-4xl font-bold mb-6 text-primary">Our Journey</h2>
+            <p class="text-xl text-gray-700 mb-8">
+              Founded in 2024, GameFox has grown from a small startup to a
+              leading force in the gaming industry. Our milestones include:
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary text-xl mr-4 mt-1"></i>
+                <span class="text-gray-700"
+                  >Dec,2024: Launched with a vision to revolutionize gaming</span
+                >
+              </li>
+           
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary text-xl mr-4 mt-1"></i>
+                <span class="text-gray-700"
+                  >2025: Recognized as industry leader in gaming
+                  innovation</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <img
+              src="https://public.readdy.ai/ai/img_res/99f8f62d972b12b302bf6d413abc8144.jpg"
+              alt="Company History"
+              class="rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="team" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-primary">
+            Meet Our Leadership Team
+          </h2>
+          <p class="text-xl text-gray-700">
+            The visionaries driving our success
+          </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <img
+              src="https://public.readdy.ai/ai/img_res/9344366d907bd0750f8ff966c7357ad3.jpg"
+              alt="Sarah Chen"
+              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="text-xl font-semibold mb-2">Sarah Chen</h3>
+            <p class="text-gray-700">CEO & Founder</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <img
+              src="https://public.readdy.ai/ai/img_res/bf10cfa47273108499d95b919d79c75c.jpg"
+              alt="Michael Thompson"
+              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="text-xl font-semibold mb-2">Michael Thompson</h3>
+            <p class="text-gray-700">CTO</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <img
+              src="https://public.readdy.ai/ai/img_res/d4d464f97168aa07bb725d76932f5193.jpg"
+              alt="Jessica Williams"
+              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="text-xl font-semibold mb-2">Jessica Williams</h3>
+            <p class="text-gray-700">COO</p>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+            <img
+              src="https://public.readdy.ai/ai/img_res/50b9c794d1d2c36bf6f68c190e878ede.jpg"
+              alt="Carlos Rodriguez"
+              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+            />
+            <h3 class="text-xl font-semibold mb-2">Carlos Rodriguez</h3>
+            <p class="text-gray-700">CMO</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="careers" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-4xl font-bold mb-6 text-primary">Join Our Team</h2>
+            <p class="text-xl text-gray-700 mb-8">
+              We're always looking for talented individuals who share our
+              passion for gaming and innovation.
+            </p>
+            <div class="space-y-6">
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2">
+                  Senior Game Developer
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  Join our development team to create cutting-edge gaming
+                  experiences.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/Web_developer" target="_blank">
+                  <button 
+                    class="text-primary hover:text-secondary transition duration-300"
+                  >
+                    Learn More →
+                  </button>
+                </a>
+             </div>
+             
+             <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2">Community Manager</h3>
+                <p class="text-gray-700 mb-4">
+                  Help us build and nurture our growing gaming community.
+                </p>
+               
+             <a href="https://wiki.openstreetmap.org/wiki/Humanitarian_OSM_Team#The_Tasking_Manager" target="_blank">
+                <button
+                  class="text-primary hover:text-secondary transition duration-300" >
+                  Learn More →
+                  </button> </a> </div>
+              </div>
+             
+              <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2">UX/UI Designer</h3>
+                <p class="text-gray-700 mb-4">
+                  Create intuitive and engaging user experiences for our
+                  platform.
+                </p>
+                <a href="https://en.wikipedia.org/wiki/User_experience_design" target="_blank">
+                <button
+                  class="text-primary hover:text-secondary transition duration-300"
+                >
+                  Learn More →
+                </button> </a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="bg-gray-50 p-8 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-6">
+                Submit Your Application
+              </h3>
+              <form class="space-y-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  />
+                </div>
+                <div>
+                  <div class="relative">
+                    <select
+                      class="w-full px-4 py-3 pr-8 border border-gray-300 rounded-lg focus:outline-none focus:border-primary appearance-none"
+                    >
+                      <option value="">Select Position</option>
+                      <option value="developer">Senior Game Developer</option>
+                      <option value="community">Community Manager</option>
+                      <option value="designer">UX/UI Designer</option>
+                    </select>
+                    <div
+                      class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+                    >
+                      <i class="ri-arrow-down-s-line text-gray-400"></i>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <textarea
+                    placeholder="Why would you like to join our team?"
+                    rows="4"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition duration-300 w-full"
+                >
+                  Submit Application
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <img
+            src  ="https://public.readdy.ai/ai/img_res/a4a947280cc6c1de4c6da90d559c0867.jpg"
+            class="w-8 h-8 object-contain"
+            alt="GameFox Logo"
+          />
+            <p class="text-gray-400">
+              The Ultimate Gaming Hub where players unite to shape the future of
+              gaming.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#features" class="text-gray-400 hover:text-white"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#mission" class="text-gray-400 hover:text-white"
+                  >Mission</a
+                >
+              </li>
+              <li>
+                <a href="#community" class="text-gray-400 hover:text-white"
+                  >Community</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-400 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+              >
+                <i class="ri-twitter-fill text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+              >
+                <i class="ri-facebook-fill text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+              >
+                <i class="ri-instagram-fill text-2xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+              >
+                <i class="ri-discord-fill text-2xl"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+            <form class="space-y-4 newsletter-form">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-primary text-white"
+              />
+              <button
+                type="submit"
+                class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-secondary transition duration-300 w-full"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+          <p class="text-gray-400">&copy; 2025 GameFox. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const forms = document.querySelectorAll("form");
+        forms.forEach((form) => {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            // Basic form validation
+            let isValid = true;
+            form.querySelectorAll("input, textarea, select").forEach((field) => {
+              if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add("border-red-500");
+              } else {
+                field.classList.remove("border-red-500");
+              }
+            });
+            if (!isValid) {
+              const errorMessage = document.createElement("div");
+              errorMessage.className =
+                "fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50";
+              errorMessage.textContent = "Please fill in all required fields";
+              document.body.appendChild(errorMessage);
+              setTimeout(() => {
+                errorMessage.remove();
+              }, 3000);
+              return;
+            }
+            // Create success message element
+            const successMessage = document.createElement("div");
+            successMessage.className =
+              "fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50";
+            successMessage.textContent = form.classList.contains("newsletter-form")
+              ? "Thanks for subscribing!"
+              : "Your application has been submitted successfully!";
+            // Add to document
+            document.body.appendChild(successMessage);
+            // Remove after 3 seconds
+            setTimeout(() => {
+              successMessage.remove();
+            }, 3000);
+            form.reset();
+          });
+        });
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              target.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
