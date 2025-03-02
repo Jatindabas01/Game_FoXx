@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GameFox - The Ultimate Gaming Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,23 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
-    <style>
-      ::where([class^="ri-"])::before { 
-    content: "\f3c2"; 
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.float { 
-    animation: float 3s ease-in-out infinite; 
-}
-
-    </style>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -56,346 +39,428 @@
         },
       };
     </script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      .feature-card:hover { transform: translateY(-8px); }
+      .nav-link { position: relative; }
+      .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #6366f1;
+      transition: width 0.3s;
+      }
+      .nav-link:hover::after { width: 100%; }
+    </style>
   </head>
-  <body class="bg-white min-h-screen">
-    <section
-      class="pt-24 pb-12 relative overflow-hidden"
-      style="background-image: url('https://public.readdy.ai/ai/img_res/c28f7ad30d17c3ecb9a7b2c678a02c9f.jpg'); background-size: cover; background-position: center;"
-    >
+  <body class="bg-white">
+    <nav class="bg-gray-900 text-white font-semibold tracking-wide py-1 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <a href="#" class="flex items-center">
+            <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+            <div class="text-2xl font-bold text-white" style="font-family: 'Orbitron', sans-serif;">Game Fox</div>
+          </a>
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#features" class="nav-link text-gray-300 hover:text-primary transition-colors">Features</a>
+            <a href="#mission" class="nav-link text-gray-300 hover:text-primary transition-colors">Mission</a>
+            <a href="#upcoming" class="nav-link text-gray-300 hover:text-primary transition-colors">Upcoming</a>
+            <a href="#contact" class="nav-link text-gray-300 hover:text-primary transition-colors">Contact</a>
+            <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-colors whitespace-nowrap">
+              Join Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <section class="relative pt-32 pb-24 overflow-hidden">
       <div
-        class="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"
+        class="absolute inset-0 bg-[url('https://public.readdy.ai/ai/img_res/878df2149203b37e276694f7dd3c3885.jpg')] bg-cover bg-center opacity-10"
       ></div>
-      <div class="max-w-7xl mx-auto px-4 relative">
-        <div class="grid md:grid-cols-2 gap-12 items-center min-h-[600px]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 class="text-5xl font-bold mb-6 leading-tight text-primary">
-              About GameFox
+            <h1 class="text-4xl font-extrabold text-black mb-6 tracking-wider drop-shadow-lg">
+              Level Up Your Gaming Journey
             </h1>
-            <p class="text-xl text-black-700 mb-8">
-              We're a passionate team dedicated to revolutionizing the gaming
-              industry through innovation, community building, and professional
-              development.
+            <p class="text-xl font-timesnewroman text-brown-600 mb-9">
+              Join the ultimate gaming hub where players, developers, and
+              esports enthusiasts unite to shape the future of gaming.
             </p>
-            <div class="flex space-x-4">
+            <div class="flex flex-wrap gap-4">
               <button
-                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition duration-300 text-lg font-semibold"
+                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap text-lg font-bold"
               >
-                Our Story
+                Get Started
               </button>
               <button
-                class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition duration-300 text-lg font-semibold"
+                class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap text-lg font-bold"
               >
-                Meet the Team
+                Learn More
               </button>
             </div>
+          </div>
+          <div class="relative">
+            <img
+              src="Images/Esports_Salary_EN_1920x1080.original.jpg"
+              alt="Gaming Hero"
+              class="rounded-2xl shadow-2xl"
+            />
           </div>
         </div>
       </div>
     </section>
-    <section id="values" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4">
+    <section id="features" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-primary">Our Core Values</h2>
-          <p class="text-xl text-black-700">
-            The principles that guide us in creating meaningful impact
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">
+            Our Leadership Team
+          </h2>
+          <p class="text-xl text-gray-600">
+            Meet the visionaries behind GameFox's success
           </p>
         </div>
         <div class="grid md:grid-cols-3 gap-8">
           <div
-            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+            class="feature-card bg-white p-8 rounded-xl shadow-lg transition-transform duration-300"
           >
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
-            >
-              <div class="w-8 h-8 flex items-center justify-center">
-                <i class="ri-heart-line text-primary text-3xl"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Passion for Innovation</h3>
-            <p class="text-gray-700">
-              We constantly push boundaries to create revolutionary gaming
-              experiences that inspire and empower our community.
+            <img
+              src="Images/Jatin Dabas.jpg"
+              alt="Jatin Dabas"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+             Jatin Dabas
+            </h3>
+            <p class="text-primary font-medium mb-4">Chief Executive Officer</p>
+            <p class="text-gray-600">
+              Gaming Experience of 8-years. Led Multiple Successful gaming platforms.
             </p>
+            <div class="flex justify-center space-x-4 mt-6">
+              <a href="https://www.linkedin.com/in/jatin-dabas-3261b8329/" class="text-gray-400 hover:text-primary">
+                <i class="ri-linkedin-fill text-xl"></i>
+              </a>
+              <a href="https://x.com/i/flow/login" class="text-gray-400 hover:text-primary">
+                <i class="ri-twitter-x-fill text-xl"></i>
+              </a>
+            </div>
           </div>
           <div
-            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+            class="feature-card bg-white p-8 rounded-xl shadow-lg transition-transform duration-300"
           >
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
-            >
-              <i class="ri-shield-star-line text-primary text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Integrity & Trust</h3>
-            <p class="text-gray-700">
-              We maintain the highest standards of transparency and fairness in
-              all our operations and community interactions.
+            <img
+              src="Images/Hitesh Yadav.jpeg"
+              alt="Sarah Chen"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Hitesh Yadav</h3>
+            <p class="text-primary font-medium mb-4">
+              Chief Financial Officer
             </p>
+            <p class="text-gray-600">
+              Tech innovator with background from spodcast and netmirror.
+              Specialized in react-native solutions.
+            </p>
+            <div class="flex justify-center space-x-4 mt-6">
+              <a href="https://www.linkedin.com/in/hiteshydv/" class="text-gray-400 hover:text-primary">
+                <i class="ri-linkedin-fill text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-github-fill text-xl"></i>
+              </a>
+            </div>
           </div>
           <div
-            class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300"
+            class="feature-card bg-white p-8 rounded-xl shadow-lg transition-transform duration-300"
           >
-            <div
-              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
-            >
-              <i class="ri-global-line text-primary text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-4">Global Impact</h3>
-            <p class="text-gray-700">
-              We're committed to fostering an inclusive gaming ecosystem that
-              transcends geographical boundaries.
+            <img
+              src="Images/User Photo.png"
+              alt="Marcus Rodriguez"
+              class="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
+            />
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Post Vacant
+            </h3>
+            <p class="text-primary font-medium mb-4">Chief Creative Officer</p>
+            <!-- <p class="text-gray-600">
+              Award-winning game designer from Blizzard Entertainment.
+              Passionate about creating immersive gaming experiences.
             </p>
+            <div class="flex justify-center space-x-4 mt-6">
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-linkedin-fill text-xl"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-primary">
+                <i class="ri-artstation-fill text-xl"></i>
+              </a> -->
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="history" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4">
+    <section id="mission" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 class="text-4xl font-bold mb-6 text-primary">Our Journey</h2>
-            <p class="text-xl text-gray-700 mb-8">
-              Founded in 2024, GameFox has grown from a small startup to a
-              leading force in the gaming industry. Our milestones include:
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+            <p class="text-xl text-gray-600 mb-8">
+              We're on a mission to transform gaming from just a hobby into a
+              viable career path. Through our platform, we empower gamers to:
             </p>
             <ul class="space-y-4">
               <li class="flex items-start">
-                <i class="ri-check-line text-primary text-xl mr-4 mt-1"></i>
-                <span class="text-gray-700"
-                  >Dec,2024: Launched with a vision to revolutionize gaming</span
+                <div class="w-6 h-6 flex items-center justify-center mt-1">
+                  <i class="ri-check-line text-primary"></i>
+                </div>
+                <span class="ml-3 text-gray-600"
+                  >Master advanced gaming techniques</span
                 >
               </li>
-           
               <li class="flex items-start">
-                <i class="ri-check-line text-primary text-xl mr-4 mt-1"></i>
-                <span class="text-gray-700"
-                  >2025: Recognized as industry leader in gaming
-                  innovation</span
+                <div class="w-6 h-6 flex items-center justify-center mt-1">
+                  <i class="ri-check-line text-primary"></i>
+                </div>
+                <span class="ml-3 text-gray-600"
+                  >Connect with industry professionals</span
+                >
+              </li>
+              <li class="flex items-start">
+                <div class="w-6 h-6 flex items-center justify-center mt-1">
+                  <i class="ri-check-line text-primary"></i>
+                </div>
+                <span class="ml-3 text-gray-600"
+                  >Access exclusive tournaments and events</span
                 >
               </li>
             </ul>
           </div>
           <div>
             <img
-              src="https://public.readdy.ai/ai/img_res/99f8f62d972b12b302bf6d413abc8144.jpg"
-              alt="Company History"
-              class="rounded-lg shadow-xl"
+              src="Images/FF-Tournament.webp"
+              alt="Gaming Mission"
+              class="rounded-2xl shadow-xl"
             />
           </div>
         </div>
       </div>
     </section>
-    <section id="team" class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4">
+    <section id="upcoming" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-primary">
-            Meet Our Leadership Team
-          </h2>
-          <p class="text-xl text-gray-700">
-            The visionaries driving our success
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Coming Soon</h2>
+          <p class="text-xl text-gray-600">
+            Get ready for our next-generation features
           </p>
         </div>
-        <div class="grid md:grid-cols-4 gap-8">
-          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-            <img
-              src="Images/Jatin Dabas.jpg"
-              alt="Jatin Dabas"
-              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-            />
-            <h3 class="text-xl font-semibold mb-2">Jatin Dabas</h3>
-            <p class="text-gray-700">CEO & Founder</p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-ai-generate text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              AI-Powered Game Analysis
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Advanced AI algorithms to analyze your gameplay and provide
+              personalized improvement suggestions.
+            </p>
+            <div class="flex items-center">
+              <div class="h-2 flex-1 bg-gray-200 rounded-full overflow-hidden">
+                <div class="w-3/4 h-full bg-primary"></div>
+              </div>
+              <span class="ml-4 text-sm text-gray-600">75% Complete</span>
+            </div>
           </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-            <img
-              src="Images/Hitesh Yadav.jpeg"
-              alt="Hitesh Yadav"
-              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-            />
-            <h3 class="text-xl font-semibold mb-2"> Hitesh Yadav</h3>
-            <p class="text-gray-700">CFO</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-            <img
-              src="Images/User Photo.png"
-              alt="Jessica Williams"
-              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-            />
-            <h3 class="text-xl font-semibold mb-2">X1</h3>
-            <p class="text-gray-700">Post Vacant</p>
-          </div>
-          <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-            <img
-              src="Images/User Photo.png"
-              alt="Carlos Rodriguez"
-              class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-            />
-            <h3 class="text-xl font-semibold mb-2">X1</h3>
-            <p class="text-gray-700">Post Vacant</p>
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-vip-crown-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">
+              Pro League System
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Join exclusive leagues, compete with pros, and earn recognition in
+              the gaming community.
+            </p>
+            <div class="flex items-center">
+              <div class="h-2 flex-1 bg-gray-200 rounded-full overflow-hidden">
+                <div class="w-1/2 h-full bg-primary"></div>
+              </div>
+              <span class="ml-4 text-sm text-gray-600">50% Complete</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="careers" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4">
+    <section id="contact" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+          <p class="text-xl text-gray-600">
+            Have questions? We're here to help!
+          </p>
+        </div>
         <div class="grid md:grid-cols-2 gap-12">
           <div>
-            <h2 class="text-4xl font-bold mb-6 text-primary">Join Our Team</h2>
-            <p class="text-xl text-gray-700 mb-8">
-              We're always looking for talented individuals who share our
-              passion for gaming and innovation.
-            </p>
-            <div class="space-y-6">
-              <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-2">
-                  Senior Game Developer
-                </h3>
-                <p class="text-gray-700 mb-4">
-                  Join our development team to create cutting-edge gaming
-                  experiences.
-                </p>
-                <a href="https://en.wikipedia.org/wiki/Web_developer" target="_blank">
-                  <button 
-                    class="text-primary hover:text-secondary transition duration-300"
-                  >
-                    Learn More →
-                  </button>
-                </a>
-             </div>
-             
-             <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-2">Community Manager</h3>
-                <p class="text-gray-700 mb-4">
-                  Help us build and nurture our growing gaming community.
-                </p>
-               
-             <a href="https://wiki.openstreetmap.org/wiki/Humanitarian_OSM_Team#The_Tasking_Manager" target="_blank">
-                <button
-                  class="text-primary hover:text-secondary transition duration-300" >
-                  Learn More →
-                  </button> </a> </div>
-              </div>
-             
-              <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold mb-2">UX/UI Designer</h3>
-                <p class="text-gray-700 mb-4">
-                  Create intuitive and engaging user experiences for our
-                  platform.
-                </p>
-                <a href="https://en.wikipedia.org/wiki/User_experience_design" target="_blank">
-                <button
-                  class="text-primary hover:text-secondary transition duration-300"
+            <form class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Name</label
                 >
-                  Learn More →
-                </button> </a>
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  rows="4"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="space-y-8">
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-mail-line text-primary text-2xl"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900">Email Us</h3>
+                <p class="text-gray-600">nexusworld0414@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-phone-line text-primary text-2xl"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900">Call Us</h3>
+                <p class="text-gray-600">7428400898</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+              >
+                <i class="ri-map-pin-line text-primary text-2xl"></i>
+              </div>
+              <div class="ml-4">
+                <h3 class="text-lg font-medium text-gray-900">Visit Us</h3>
+                <p class="text-gray-600">
+                  123 Gaming Street, Digital City, GX 12345
+                </p>
               </div>
             </div>
           </div>
-          <div>
-            <div class="bg-gray-50 p-8 rounded-lg">
-              <h3 class="text-2xl font-semibold mb-6">Submit Your Application</h3>
-              <form id="applicationForm" class="space-y-6">
-                  <div>
-                      <input type="text" id="fullName" placeholder="Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                  </div>
-                  <div>
-                      <input type="email" id="email" placeholder="Email Address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg">
-                  </div>
-                  <div>
-                      <select id="position" class="w-full px-4 py-3 border border-gray-300 rounded-lg" required>
-                          <option value="">Select Position</option>
-                          <option value="developer">Senior Game Developer</option>
-                          <option value="community">Community Manager</option>
-                          <option value="designer">UX/UI Designer</option>
-                      </select>
-                  </div>
-                  <div>
-                      <textarea id="reason" placeholder="Why would you like to join our team?" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg"></textarea>
-                  </div>
-                  <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg w-full">Submit Application</button>
-              </form>
-          </div>
-          </div>
         </div>
       </div>
     </section>
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="max-w-7xl mx-auto px-4">
+    <footer class="bg-gray-900 text-white py-5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8">
           <div>
-            <img
-            src  ="https://public.readdy.ai/ai/img_res/a4a947280cc6c1de4c6da90d559c0867.jpg"
-            class="w-8 h-8 object-contain"
-            alt="GameFox Logo"
-          />
+            <a href="#" class="flex items-center">
+              <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+              <div class="text-2xl font-bold text-primary text-black" style="font-family: 'Orbitron', sans-serif;">Game Fox</div>
+            </a>
             <p class="text-gray-400">
-              The Ultimate Gaming Hub where players unite to shape the future of
+              The ultimate gaming hub where players unite to shape the future of
               gaming.
             </p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <h4 class="text-lg font-medium mb-4">Quick Links</h4>
             <ul class="space-y-2">
               <li>
-                <a href="#features" class="text-gray-400 hover:text-white"
-                  >Features</a
+                <a href="#" class="text-gray-400 hover:text-white">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Features</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Tournaments</a
                 >
               </li>
               <li>
-                <a href="#mission" class="text-gray-400 hover:text-white"
-                  >Mission</a
-                >
-              </li>
-              <li>
-                <a href="#community" class="text-gray-400 hover:text-white"
-                  >Community</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="text-gray-400 hover:text-white"
-                  >Contact</a
-                >
+                <a href="#" class="text-gray-400 hover:text-white">Contact</a>
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+            <h4 class="text-lg font-medium mb-4">Follow Us</h4>
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
-                <i class="ri-twitter-fill text-2xl"></i>
+                <i class="ri-twitter-x-line"></i>
               </a>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
-                <i class="ri-facebook-fill text-2xl"></i>
+                <i class="ri-discord-line"></i>
               </a>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
-                <i class="ri-instagram-fill text-2xl"></i>
+                <i class="ri-twitch-line"></i>
               </a>
               <a
                 href="#"
-                class="text-gray-400 hover:text-white w-8 h-8 flex items-center justify-center"
+                class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
               >
-                <i class="ri-discord-fill text-2xl"></i>
+                <i class="ri-youtube-line"></i>
               </a>
             </div>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
-            <form class="space-y-4 newsletter-form">
+            <h4 class="text-lg font-medium mb-4">Newsletter</h4>
+            <form class="space-y-4">
               <input
                 type="email"
-                placeholder="Your email address"
-                class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-primary text-white"
+                class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                placeholder="Enter your email"
               />
               <button
                 type="submit"
-                class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-secondary transition duration-300 w-full"
+                class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-secondary transition-colors whitespace-nowrap"
               >
                 Subscribe
               </button>
@@ -409,108 +474,23 @@
     </footer>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const forms = document.querySelectorAll("form");
-        forms.forEach((form) => {
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            // Basic form validation
-            let isValid = true;
-            form.querySelectorAll("input, textarea, select").forEach((field) => {
-              if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add("border-red-500");
-              } else {
-                field.classList.remove("border-red-500");
-              }
-            });
-            if (!isValid) {
-              const errorMessage = document.createElement("div");
-              errorMessage.className =
-                "fixed top-4 right-4 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50";
-              errorMessage.textContent = "Please fill in all required fields";
-              document.body.appendChild(errorMessage);
-              setTimeout(() => {
-                errorMessage.remove();
-              }, 3000);
-              return;
-            }
-            // Create success message element
-            const successMessage = document.createElement("div");
-            successMessage.className =
-              "fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50";
-            successMessage.textContent = form.classList.contains("newsletter-form")
-              ? "Thanks for subscribing!"
-              : "Your application has been submitted successfully!";
-            // Add to document
-            document.body.appendChild(successMessage);
-            // Remove after 3 seconds
-            setTimeout(() => {
-              successMessage.remove();
-            }, 3000);
-            form.reset();
-          });
-        });
-        // Add smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-              target.scrollIntoView({
-                behavior: "smooth",
-              });
-            }
-          });
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData);
+          const notification = document.createElement("div");
+          notification.className =
+            "fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-transform duration-300 translate-y-0";
+          notification.textContent = "Message sent successfully!";
+          document.body.appendChild(notification);
+          setTimeout(() => {
+            notification.style.transform = "translateY(200%)";
+            setTimeout(() => notification.remove(), 300);
+          }, 3000);
+          form.reset();
         });
       });
     </script>
-   <script type="module">
-    // Import Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-    // Firebase configuration
-    const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_STORAGE_BUCKET",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    // Form Submission
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("applicationForm").addEventListener("submit", async function (event) {
-            event.preventDefault();
-
-            const fullName = document.getElementById("fullName").value;
-            const email = document.getElementById("email").value;
-            const position = document.getElementById("position").value;
-            const reason = document.getElementById("reason").value;
-
-            try {
-                await addDoc(collection(db, "applications"), {
-                    fullName: fullName,
-                    email: email,
-                    position: position,
-                    reason: reason,
-                    timestamp: serverTimestamp()
-                });
-                alert("Application submitted successfully!");
-                document.getElementById("applicationForm").reset();
-            } catch (error) {
-                console.error("Error submitting application: ", error);
-                alert("Error: " + error.message);
-            }
-        });
-    });
-</script>
   </body>
 </html>
