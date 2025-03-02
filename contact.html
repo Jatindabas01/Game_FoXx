@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=375px, initial-scale=1.0" />
-    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - GameFox</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,14 +17,17 @@
     />
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
+      .rounded-button {
+        border-radius: 8px;
+      }
     </style>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: "#6366f1",
-              secondary: "#f59e0b",
+              primary: "#6366f1", // Indigo blue
+              secondary: "#f59e0b", // Amber/yellow
             },
             borderRadius: {
               none: "0px",
@@ -38,14 +41,18 @@
               full: "9999px",
               button: "8px",
             },
+            maxWidth: {
+              'desktop': '1024px', // Custom max-width for desktop
+            },
           },
         },
       };
     </script>
   </head>
-  <body class="w-[375px] min-h-[762px] mx-auto bg-gray-50">
+  <body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
-      <div class="px-4 py-3 flex items-center justify-between">
+      <div class="px-4 py-3 flex items-center justify-between max-w-desktop mx-auto">
         <div class="flex items-center gap-2">
           <img
             src="https://public.readdy.ai/ai/img_res/a4a947280cc6c1de4c6da90d559c0867.jpg"
@@ -54,21 +61,26 @@
           />
           <div class="text-2xl font-['Pacifico'] text-primary">GameFox</div>
         </div>
-        <div class="w-8 h-8 flex items-center justify-center">
+        <div class="w-8 h-8 flex items-center justify-center md:hidden">
           <i class="ri-menu-line text-xl"></i>
         </div>
       </div>
     </nav>
-    <main class="pt-16 pb-20 px-4">
-      <div class="mb-8">
-        <h1 class="text-2xl font-bold mb-2">Contact Us</h1>
-        <p class="text-gray-600 text-sm">
+
+    <!-- Main Content -->
+    <main class="pt-16 pb-20 px-4 md:px-8 max-w-desktop mx-auto">
+      <!-- Header -->
+      <div class="mb-8 text-center">
+        <h1 class="text-2xl md:text-3xl font-bold mb-2 text-gray-800">Contact Us</h1>
+        <p class="text-gray-600 text-sm md:text-base">
           Your experience and feedback shape our future. Let's build something
           amazing together.
         </p>
       </div>
-      <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
-        <h2 class="text-lg font-semibold mb-4">Why Reach Out?</h2>
+
+      <!-- Why Reach Out Section -->
+      <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <h2 class="text-lg md:text-xl font-semibold mb-4 text-gray-800">Why Reach Out?</h2>
         <div class="space-y-4">
           <div class="flex items-start gap-3">
             <div
@@ -77,8 +89,8 @@
               <i class="ri-checkbox-circle-line"></i>
             </div>
             <div>
-              <h3 class="font-medium">Direct CEO Access</h3>
-              <p class="text-sm text-gray-600">
+              <h3 class="font-medium text-gray-800">Direct CEO Access</h3>
+              <p class="text-sm md:text-base text-gray-600">
                 Your message goes straight to the top
               </p>
             </div>
@@ -90,8 +102,8 @@
               <i class="ri-checkbox-circle-line"></i>
             </div>
             <div>
-              <h3 class="font-medium">Influence GameFox</h3>
-              <p class="text-sm text-gray-600">Shape our next big update</p>
+              <h3 class="font-medium text-gray-800">Influence GameFox</h3>
+              <p class="text-sm md:text-base text-gray-600">Shape our next big update</p>
             </div>
           </div>
           <div class="flex items-start gap-3">
@@ -101,56 +113,60 @@
               <i class="ri-checkbox-circle-line"></i>
             </div>
             <div>
-              <h3 class="font-medium">Fast Response</h3>
-              <p class="text-sm text-gray-600">Get answers within 24 hours</p>
+              <h3 class="font-medium text-gray-800">Fast Response</h3>
+              <p class="text-sm md:text-base text-gray-600">Get answers within 24 hours</p>
             </div>
           </div>
         </div>
       </div>
-      <form id="contactForm" class="bg-white rounded-lg shadow-sm p-4 mb-6">
-        <div class="space-y-4">
+
+      <!-- Contact Form -->
+      <form id="contactForm" class="bg-white rounded-lg shadow-sm p-6 mb-6">
+        <div class="space-y-6">
           <div>
-            <label class="block text-sm font-medium mb-1">Full Name</label>
+            <label class="block text-sm md:text-base font-medium mb-2 text-gray-700">Full Name</label>
             <input
               type="text"
-              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="w-full px-4 py-3 md:px-5 md:py-4 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20 text-gray-800"
               required
             />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1">Email</label>
+            <label class="block text-sm md:text-base font-medium mb-2 text-gray-700">Email</label>
             <input
               type="email"
-              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="w-full px-4 py-3 md:px-5 md:py-4 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20 text-gray-800"
               required
             />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1">Phone Number</label>
+            <label class="block text-sm md:text-base font-medium mb-2 text-gray-700">Phone Number</label>
             <input
               type="tel"
-              class="w-full px-3 py-2 border rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="w-full px-4 py-3 md:px-5 md:py-4 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary/20 text-gray-800"
               required
             />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1">Message</label>
+            <label class="block text-sm md:text-base font-medium mb-2 text-gray-700">Message</label>
             <textarea
-              class="w-full px-3 py-2 border rounded-button h-24 focus:outline-none focus:ring-2 focus:ring-primary/20"
+              class="w-full px-4 py-3 md:px-5 md:py-4 border border-gray-300 rounded-button h-24 md:h-32 focus:outline-none focus:ring-2 focus:ring-primary/20 text-gray-800"
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            class="w-full bg-primary text-white py-3 rounded-button hover:bg-primary/90 transition-colors"
+            class="w-full bg-primary text-white py-3 md:py-4 rounded-button hover:bg-primary/90 transition-colors font-medium text-sm md:text-base"
           >
             Send Message
           </button>
         </div>
       </form>
-      <div class="bg-white rounded-lg shadow-sm p-4">
-        <h2 class="text-lg font-semibold mb-4">Get in Touch</h2>
-        <div class="space-y-3">
+
+      <!-- Get in Touch -->
+      <div class="bg-white rounded-lg shadow-sm p-6">
+        <h2 class="text-lg md:text-xl font-semibold mb-4 text-gray-800">Get in Touch</h2>
+        <div class="space-y-4">
           <div class="flex items-center gap-3">
             <div
               class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full"
@@ -159,7 +175,7 @@
             </div>
             <a
               href="mailto:nexusworld0414@gmail.com"
-              class="text-sm text-gray-600"
+              class="text-sm md:text-base text-gray-600 hover:text-gray-800"
               >nexusworld0414@gmail.com</a
             >
           </div>
@@ -169,44 +185,49 @@
             >
               <i class="ri-phone-line text-primary"></i>
             </div>
-            <a href="tel:7428400898" class="text-sm text-gray-600"
+            <a href="tel:7428400898" class="text-sm md:text-base text-gray-600 hover:text-gray-800"
               >+91 7428400898</a
             >
           </div>
         </div>
       </div>
     </main>
+
+    <!-- Success Modal -->
     <div
       id="successModal"
       class="fixed inset-0 flex items-center justify-center bg-black/50 hidden"
     >
-      <div class="bg-white rounded-lg p-6 mx-4 w-full max-w-sm">
+      <div class="bg-white rounded-lg p-6 mx-4 w-full max-w-sm md:max-w-md">
         <div
           class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4"
         >
           <i class="ri-check-line text-2xl text-primary"></i>
         </div>
-        <h3 class="text-lg font-semibold text-center mb-2">Message Sent!</h3>
-        <p class="text-sm text-gray-600 text-center mb-4">
+        <h3 class="text-lg md:text-xl font-semibold text-center text-gray-800 mb-2">Message Sent!</h3>
+        <p class="text-sm md:text-base text-gray-600 text-center mb-4">
           We'll get back to you within 24 hours.
         </p>
         <button
           onclick="closeModal()"
-          class="w-full bg-primary text-white py-2 rounded-button hover:bg-primary/90 transition-colors"
+          class="w-full bg-primary text-white py-2 md:py-3 rounded-button hover:bg-primary/90 transition-colors font-medium text-sm md:text-base"
         >
           Close
         </button>
       </div>
     </div>
+
     <script>
       const form = document.getElementById("contactForm");
       const modal = document.getElementById("successModal");
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         modal.classList.remove("hidden");
         form.reset();
       });
-      function closeModal() {
+
+      window.closeModal = function() {
         modal.classList.add("hidden");
       }
     </script>

@@ -1,14 +1,15 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDha-gjj4H-A2P6cHOF7PxZpN5iERWiui0",
-    authDomain: "mail-receiver-b92cf.firebaseapp.com",
-    projectId: "mail-receiver-b92cf",
-    storageBucket: "mail-receiver-b92cf.firebasestorage.app",
-    messagingSenderId: "971738716592",
-    appId: "1:971738716592:web:8fb44a13f9313e8073de75",
-    measurementId: "G-KGG6MWVTBJ"
-  };
+    apiKey: "AIzaSyCeEGHMg0bfUj66IQll2GW3VYB91H7E04A",
+    authDomain: "mail-7dfe4.firebaseapp.com",
+    projectId: "mail-7dfe4",
+    storageBucket: "mail-7dfe4.firebasestorage.app",
+    messagingSenderId: "721937136824",
+    appId: "1:721937136824:web:be61d35611f016f966884d",
+    measurementId: "G-JKMNN858L4"
+  }
   
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

@@ -16,67 +16,41 @@
       rel="stylesheet"
     />
     <style>
-      :where([class^="ri-"])::before { content: "\f3c2"; }
-      .game-card:hover .play-overlay { opacity: 1; }
-      .category-card:hover { transform: scale(1.05); }
       :root {
-      --bg-primary: #ffffff;
-      --bg-secondary: #f9fafb;
-      --text-primary: #111827;
-      --text-secondary: #4b5563;
-      --card-bg: #ffffff;
-      --card-border: #e5e7eb;
-      --hover-bg: #f3f4f6;
-      }
-      [data-theme="dark"] {
-      --bg-primary: #111827;
-      --bg-secondary: #1f2937;
-      --text-primary: #ffffff;
-      --text-secondary: #9ca3af;
-      --card-bg: #1f2937;
-      --card-border: #374151;
-      --hover-bg: #374151;
-      }
-      body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      transition: all 0.3s ease;
-      }
-      .bg-theme-primary {
-      background-color: var(--bg-primary);
-      }
-      .bg-theme-secondary {
-      background-color: var(--bg-secondary);
-      }
-      .text-theme-primary {
-      color: var(--text-primary);
-      }
-      .text-theme-secondary {
-      color: var(--text-secondary);
-      }
-      .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--card-border);
-      }
-      .card:hover {
-      background-color: var(--hover-bg);
-      }
-      [data-theme="dark"] .text-gray-600,
-      [data-theme="dark"] .text-gray-700 {
-      color: #e5e7eb;
-      }
-      [data-theme="dark"] .bg-white {
-      background-color: var(--card-bg);
-      }
-      [data-theme="dark"] .border-gray-300 {
-      border-color: var(--card-border);
-      }
-      [data-theme="dark"] .hover\:bg-gray-50:hover {
-      background-color: var(--hover-bg);
-      }
-      [data-theme="dark"] .shadow-lg {
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
-      }
+  --bg-primary: #f4f4f4;  /* Light Gray */
+  --bg-secondary: #e2e8f0; /* Soft Blue Gray */
+  --text-primary: #1e293b;  /* Dark Blue */
+  --text-secondary: #475569; /* Muted Blue */
+  --card-bg: #ffffff;  /* White */
+  --card-border: #cbd5e1; /* Light Border */
+  --hover-bg: #dbeafe; /* Light Blue */
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0f1f; /* Deep Dark Blue */
+  --bg-secondary: #1a1f2e; /* Dark Gray Blue */
+  --text-primary: #e0f2fe; /* Neon Blue */
+  --text-secondary: #94a3b8; /* Soft Gray */
+  --card-bg: #111827; /* Dark Card */
+  --card-border: #374151; /* Subtle Border */
+  --hover-bg: #172554; /* Deep Neon Blue */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.card:hover {
+  background-color: var(--hover-bg);
+}
+
     </style>
     <script>
       tailwind.config = {
@@ -290,11 +264,11 @@
               <div class="text-white max-w-2xl">
                 <h1 class="text-5xl font-bold mb-6">Play, Compete and Win</h1>
                 <p class="text-xl mb-8">Welcome to the Ultimate Gaming Hub</p>
-                <button
-                  class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90"
-                >
-                  Start Playing
-                </button>
+                <a href="https://www.mpl.live"
+                class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+               Start Playing
+             </a>
+             
               </div>
             </div>
           </div>
@@ -314,11 +288,11 @@
                 <p class="text-xl mb-8">
                   Experience Competitive Gaming at its Best
                 </p>
-                <button
-                  class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90"
-                >
-                  Join Now
-                </button>
+                <a href="https://escharts.com/tournaments"
+                class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+               Join Now
+             </a>
+             
               </div>
             </div>
           </div>
@@ -336,11 +310,11 @@
                   The Future of Gaming is Here
                 </h1>
                 <p class="text-xl mb-8">Immerse Yourself in Next-Gen Gaming</p>
-                <button
-                  class="bg-primary text-white px-8 py-4 !rounded-button text-lg hover:bg-primary/90"
-                >
-                  Explore VR Games
-                </button>
+                <a href="https://heyvr.io" target="_blank"
+   class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+  Explore VR Games
+</a>
+
               </div>
             </div>
           </div>
@@ -579,7 +553,7 @@
         >
           <div class="flex flex-col md:flex-row items-center justify-between">
             <div class="mb-6 md:mb-0">
-              <h3 class="text-2xl font-bold mb-2">Ready to Start Gaming?</h3>
+              <h3 class="text-2xl font-bold mb-2">Ready to Explore ?</h3>
               <p class="text-theme-secondary">
                 Join millions of players and start your gaming journey today!
               </p>
@@ -602,26 +576,25 @@
           <div class="md:flex">
             <div class="md:w-1/2">
               <img
-                src="https://public.readdy.ai/ai/img_res/29e396cf7736afc040fbd4faaf5cc552.jpg"
+                src="Images/Gta 5.jpg"
                 class="w-full h-full object-cover"
                 alt="Featured Game"
               />
             </div>
             <div class="md:w-1/2 p-8">
-              <h3 class="text-2xl font-bold mb-4">Kingdom Battle Royale</h3>
+              <h3 class="text-2xl font-bold mb-4">Gta 5</h3>
               <div class="flex items-center mb-4">
                 <span class="text-yellow-400">★★★★★</span>
                 <span class="ml-2 text-gray-600">4.9 | 100K+ Players</span>
               </div>
               <p class="text-gray-600 mb-6">
-                An epic medieval warfare strategy game where you lead your army
-                and conquer enemy castles.
+                Grand Theft Auto V is not only a preposterously enjoyable video game, but also an intelligent and sharp-tongued satire of contemporary America.
               </p>
-              <button
-                class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90"
-              >
-                Play Now
-              </button>
+              <a href="https://www.youtube.com/watch?v=QkkoHAzjnUs" 
+              class="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary/90 inline-block text-center">
+             Watch Now
+           </a>
+           
             </div>
           </div>
         </div>
@@ -771,19 +744,19 @@
             <h3 class="text-xl font-bold mb-4">Follow Us</h3>
             <div class="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AffyTKVuA5_r3Cr_7OCSEiGEugHJI6Ll-KOUyaYENfudIez6BXOCxWZFg1BIkJuFPBP1uuxdDCvnmSRI7Nk2TKK7SFzrvmVtNztjhixIGLke9w&smuh=57402&lh=Ac87WnyQL32BH_GDJ8w"
                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
               >
                 <i class="ri-facebook-fill"></i>
               </a>
               <a
-                href="#"
+                href="https://x.com/i/flow/login?lang=en"
                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
               >
                 <i class="ri-twitter-fill"></i>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/accounts/login/?hl=en"
                 class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
               >
                 <i class="ri-instagram-fill"></i>
