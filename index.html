@@ -116,43 +116,43 @@ body {
               id="loginModal"
               class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
             >
-              <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+              <div class="modal-content rounded-lg p-8 max-w-md w-full mx-4">
                 <div class="flex justify-between items-center mb-6">
                   <h2 class="text-2xl font-bold">Login to GameFox</h2>
                   <button
                     onclick="hideLoginModal()"
-                    class="text-gray-500 hover:text-gray-700"
+                    class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
                   >
                     <i class="ri-close-line text-2xl"></i>
                   </button>
                 </div>
                 <form id="loginForm" class="space-y-4">
                   <div>
-                    <label class="block text-gray-700 mb-2" for="email"
+                    <label class="block text-gray-700 dark:text-gray-300 mb-2" for="email"
                       >Email</label
                     >
                     <input
                       type="email"
                       id="email"
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       required
                     />
                   </div>
                   <div>
-                    <label class="block text-gray-700 mb-2" for="password"
+                    <label class="block text-gray-700 dark:text-gray-300 mb-2" for="password"
                       >Password</label
                     >
                     <input
                       type="password"
                       id="password"
-                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
                       required
                     />
                   </div>
                   <div class="flex items-center justify-between">
                     <label class="flex items-center">
                       <input type="checkbox" class="w-4 h-4 text-primary" />
-                      <span class="ml-2 text-sm text-gray-600"
+                      <span class="ml-2 text-sm text-gray-600 dark:text-gray-400"
                         >Remember me</span
                       >
                     </label>
@@ -168,10 +168,10 @@ body {
                   </button>
                   <div class="relative my-6">
                     <div class="absolute inset-0 flex items-center">
-                      <div class="w-full border-t border-gray-300"></div>
+                      <div class="w-full border-t border-gray-300 dark:border-gray-600"></div>
                     </div>
                     <div class="relative flex justify-center text-sm">
-                      <span class="px-2 bg-white text-gray-500"
+                      <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400"
                         >Or continue with</span
                       >
                     </div>
@@ -179,30 +179,54 @@ body {
                   <div class="grid grid-cols-3 gap-4">
                     <button
                       type="button"
-                      class="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <i class="ri-google-fill text-xl"></i>
                     </button>
                     <button
                       type="button"
-                      class="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <i class="ri-facebook-fill text-xl"></i>
                     </button>
                     <button
                       type="button"
-                      class="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-lg hover:bg-gray-50"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
                     >
                       <i class="ri-apple-fill text-xl"></i>
                     </button>
                   </div>
-                  <p class="text-center text-sm text-gray-600">
+                  <p class="text-center text-sm text-gray-600 dark:text-gray-400">
                     Don't have an account?
                     <a href="#" class="text-primary hover:underline">Sign up</a>
                   </p>
                 </form>
               </div>
             </div>
+          </div>
+          
+          <style>
+            .modal-content {
+              background-color: var(--modal-bg, #ffffff); /* Default Light */
+              color: var(--modal-text, #333);
+            }
+          
+            [data-theme="dark"] .modal-content {
+              --modal-bg: #1e293b; /* Dark Blue */
+              --modal-text: #f8fafc;
+            }
+            input {
+  color: white; /* Yeh fix karega text invisible issue */
+  background-color: transparent; /* Taaki dark mode me background match kare */
+  border: 1px solid #6b7280; /* Border halka grey rakho */
+}
+
+input::placeholder {
+  color: #a1a1aa; /* Placeholder halka visible ho */
+}
+
+          </style>
+          
             <script>
               function showLoginModal() {
                 document.getElementById("loginModal").classList.remove("hidden");
