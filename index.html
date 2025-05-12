@@ -11,7 +11,856 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <link<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameFox - Play and Win</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/main.css">
+<script src="static/js/main.js" defer></script>
+
+    <style>
+      :root {
+  --bg-primary: #f4f4f4;  /* Light Gray */
+  --bg-secondary: #e2e8f0; /* Soft Blue Gray */
+  --text-primary: #1e293b;  /* Dark Blue */
+  --text-secondary: #475569; /* Muted Blue */
+  --card-bg: #ffffff;  /* White */
+  --card-border: #cbd5e1; /* Light Border */
+  --hover-bg: #dbeafe; /* Light Blue */
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0f1f; /* Deep Dark Blue */
+  --bg-secondary: #1a1f2e; /* Dark Gray Blue */
+  --text-primary: #e0f2fe; /* Neon Blue */
+  --text-secondary: #94a3b8; /* Soft Gray */
+  --card-bg: #111827; /* Dark Card */
+  --card-border: #374151; /* Subtle Border */
+  --hover-bg: #172554; /* Deep Neon Blue */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.card:hover {
+  background-color: var(--hover-bg);
+}
+
+
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#7C3AED",
+              secondary: "#EC4899",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-theme-primary" data-theme="light">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-black shadow-lg z-50 font-[Orbitron,sans-serif]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex justify-between items-center h-16 w-full">
+
+      <!-- Left Side: Logo -->
+      <div class="flex items-center space-x-4 logo">
+        <a href="#" class="text-2xl font-bold text-white">Game Fox</a>
+      </div>
+
+          <!-- Desktop Menu -->
+    <div class="hidden md:flex justify-center items-center space-x-8 mt-2" id="menu">
+      <a href="index.html" class="text-white hover:text-red-400 font-bold">Home</a>
+      <a href="#" class="text-white hover:text-red-400 font-bold">Games</a>
+      <a href="about.html" class="text-white hover:text-red-400 font-bold">About Us</a>
+      <a href="contact.html" class="text-white hover:text-red-400 font-bold">Contact</a>
+      <button
+        onclick="showLoginModal()"
+        class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 font-semibold"
+      >
+        Login
+      </button>
+    </div>
+
+      <!-- Right Side: Menu Toggle and Menu Items -->
+      <div class="flex items-center space-x-6 mode">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+          <i class="ri-sun-line dark:hidden text-xl text-white"></i>
+          <i class="ri-moon-line hidden dark:block text-xl text-white"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+          ☰
+        </button>
+      </div>
+    </div>
+
+
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="md:hidden hidden flex-col space-y-2 mt-4" id="mobile-menu">
+      <a href="index.html" class="text-white hover:text-red-400 font-bold">Home</a>
+      <a href="#" class="text-white hover:text-red-400 font-bold">Games</a>
+      <a href="about.html" class="text-white hover:text-red-400 font-bold">About Us</a>
+      <a href="contact.html" class="text-white hover:text-red-400 font-bold">Contact</a>
+      <button
+        onclick="showLoginModal()"
+        class="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 font-semibold"
+      >
+        Login
+      </button>
+    </div>
+
+
+  </div>
+</nav>
+
+<!-- Toggle Script -->
+<script>
+  // Check if elements exist before using them
+  const btn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  // Make sure the button and mobile menu exist before adding event listener
+  if (btn && mobileMenu) {
+    btn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+</script>
+
+
+            <div
+              id="loginModal"
+              class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+            >
+              <div class="modal-content rounded-lg p-8 max-w-md w-full mx-4">
+                <div class="flex justify-between items-center mb-6">
+                  <h2 class="text-2xl font-bold">Login to GameFox</h2>
+                  <button
+                    onclick="hideLoginModal()"
+                    class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+                  >
+                    <i class="ri-close-line text-2xl"></i>
+                  </button>
+                </div>
+                <form id="loginForm" class="space-y-4">
+                  <div>
+                    <label class="block text-gray-700 dark:text-gray-300 mb-2" for="email"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 dark:text-gray-300 mb-2" for="password"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      id="password"
+                      class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                      required
+                    />
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <label class="flex items-center">
+                      <input type="checkbox" class="w-4 h-4 text-primary" />
+                      <span class="ml-2 text-sm text-gray-600 dark:text-gray-400"
+                        >Remember me</span
+                      >
+                    </label>
+                    <a href="#" class="text-sm text-primary hover:underline"
+                      >Forgot password?</a
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-primary text-white py-2 !rounded-button hover:bg-primary/90"
+                  >
+                    Login
+                  </button>
+                  <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                      <div class="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                      <span class="px-2 bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400"
+                        >Or continue with</span
+                      >
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-4">
+                    <button
+                      type="button"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                    >
+                      <i class="ri-google-fill text-xl"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                    >
+                      <i class="ri-facebook-fill text-xl"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="flex items-center justify-center py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700"
+                    >
+                      <i class="ri-apple-fill text-xl"></i>
+                    </button>
+                  </div>
+                  <p class="text-center text-sm text-gray-600 dark:text-gray-400">
+                    Don't have an account?
+                    <a href="#" class="text-primary hover:underline">Sign up</a>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+          
+          <style>
+            .modal-content {
+              background-color: var(--modal-bg, #ffffff); /* Default Light */
+              color: var(--modal-text, #333);
+            }
+          
+            [data-theme="dark"] .modal-content {
+              --modal-bg: #1e293b; /* Dark Blue */
+              --modal-text: #f8fafc;
+            }
+            input {
+  color: white; /* Yeh fix karega text invisible issue */
+  background-color: transparent; /* Taaki dark mode me background match kare */
+  border: 1px solid #6b7280; /* Border halka grey rakho */
+}
+
+input::placeholder {
+  color: #a1a1aa; /* Placeholder halka visible ho */
+}
+
+          </style>      
+            <script>
+              function showLoginModal() {
+                document.getElementById("loginModal").classList.remove("hidden");
+                document.getElementById("loginModal").classList.add("flex");
+                document.body.style.overflow = "hidden";
+              }
+              function hideLoginModal() {
+                document.getElementById("loginModal").classList.add("hidden");
+                document.getElementById("loginModal").classList.remove("flex");
+                document.body.style.overflow = "auto";
+              }
+              document.getElementById("loginForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+                if (email && password) {
+                  const successModal = document.createElement("div");
+                  successModal.className =
+                    "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+                  successModal.innerHTML = `
+              <div class="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+              <div class="text-center">
+              <i class="ri-checkbox-circle-line text-green-500 text-5xl mb-4"></i>
+              <h3 class="text-xl font-bold mb-2">Login Successful!</h3>
+              <p class="text-gray-600 mb-4">Welcome back to GameFox</p>
+              <button onclick="this.parentElement.parentElement.parentElement.remove()" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90">Continue</button>
+              </div>
+              </div>
+              `;
+                  document.body.appendChild(successModal);
+                  hideLoginModal();
+                  document.getElementById("loginForm").reset();
+                }
+              });
+              document.getElementById("loginModal").addEventListener("click", function (e) {
+                if (e.target === this) {
+                  hideLoginModal();
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="relative pt-16">
+      <div class="h-[700px] relative overflow-hidden">
+        <div
+          class="absolute inset-0 flex transition-transform duration-500"
+          id="slider"
+        >
+          <div class="min-w-full h-full relative">
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('https://public.readdy.ai/ai/img_res/cedd119534a521110d6138db7f2da50f.jpg')"
+            ></div>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div
+              class="relative h-full max-w-7xl mx-auto px-4 flex items-center"
+            >
+              <div class="text-white max-w-2xl">
+                <h1 class="text-5xl font-bold mb-6">Play, Compete and Win</h1>
+                <p class="text-xl mb-8">Welcome to the Ultimate Gaming Hub</p>
+                <a href="https://www.mpl.live"
+                class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+               Start Playing
+             </a>
+             
+              </div>
+            </div>
+          </div>
+          <div class="min-w-full h-full relative">
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('https://public.readdy.ai/ai/img_res/231a1e7a93c65c1a41ddc889e20ab375.jpg')"
+            ></div>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div
+              class="relative h-full max-w-7xl mx-auto px-4 flex items-center"
+            >
+              <div class="text-white max-w-2xl">
+                <h1 class="text-5xl font-bold mb-6">
+                  Join the Elite Gaming Community
+                </h1>
+                <p class="text-xl mb-8">
+                  Experience Competitive Gaming at its Best
+                </p>
+                <a href="https://escharts.com/tournaments"
+                class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+               Join Now
+             </a>
+             
+              </div>
+            </div>
+          </div>
+          <div class="min-w-full h-full relative">
+            <div
+              class="absolute inset-0 bg-cover bg-center"
+              style="background-image: url('https://public.readdy.ai/ai/img_res/c62a91edc234aeef25fb1239f0cf3634.jpg')"
+            ></div>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div
+              class="relative h-full max-w-7xl mx-auto px-4 flex items-center"
+            >
+              <div class="text-white max-w-2xl">
+                <h1 class="text-5xl font-bold mb-6">
+                  The Future of Gaming is Here
+                </h1>
+                <p class="text-xl mb-8">Immerse Yourself in Next-Gen Gaming</p>
+                <a href="https://heyvr.io" target="_blank"
+   class="bg-primary text-white px-8 py-4 rounded-md text-lg hover:bg-primary/90 inline-block text-center">
+  Explore VR Games
+</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2"
+        >
+          <button
+            class="w-3 h-3 rounded-full bg-white/50 slider-dot"
+            data-index="0"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full bg-white/50 slider-dot"
+            data-index="1"
+          ></button>
+          <button
+            class="w-3 h-3 rounded-full bg-white/50 slider-dot"
+            data-index="2"
+          ></button>
+        </div>
+        <button
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 flex items-center justify-center text-white"
+          onclick="prevSlide()"
+        >
+          <i class="ri-arrow-left-s-line text-2xl"></i>
+        </button>
+        <button
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/30 hover:bg-white/50 flex items-center justify-center text-white"
+          onclick="nextSlide()"
+        >
+          <i class="ri-arrow-right-s-line text-2xl"></i>
+        </button>
+      </div>
+    </section>
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const html = document.documentElement;
+      const body = document.body;
+      function setTheme(theme) {
+        body.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        document.querySelectorAll(".ri-sun-line, .ri-moon-line").forEach((icon) => {
+          icon.classList.toggle("hidden");
+        });
+        if (theme === "dark") {
+          document.querySelectorAll('[class*="text-gray-"]').forEach((el) => {
+            el.style.color = "#e5e7eb";
+          });
+        } else {
+          document.querySelectorAll('[class*="text-gray-"]').forEach((el) => {
+            el.style.color = "";
+          });
+        }
+      }
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+      });
+      const savedTheme = localStorage.getItem("theme") || "light";
+      setTheme(savedTheme);
+      let currentSlide = 0;
+      const slider = document.getElementById("slider");
+      const dots = document.querySelectorAll(".slider-dot");
+      const totalSlides = 3;
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("bg-white", index === currentSlide);
+          dot.classList.toggle("bg-white/50", index !== currentSlide);
+        });
+      }
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      }
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      }
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentSlide = index;
+          updateSlider();
+        });
+      });
+      setInterval(nextSlide, 5000);
+      updateSlider();
+    </script>
+    <section class="py-24 bg-theme-secondary">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center">Trending Games</h2>
+        <div class="flex overflow-x-auto space-x-6 pb-6">
+          <div
+            class="game-card card relative min-w-[300px] rounded-lg overflow-hidden shadow-lg"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/de4562150fd4f4ad4b85cc151c7ce93d.jpg"
+              class="w-full h-48 object-cover"
+              alt="Game 1"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-semibold">Dragon Warriors</h3>
+              <p class="text-theme-secondary">4.8 ★ | 50K+ Players</p>
+            </div>
+            <div
+              class="play-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity flex items-center justify-center"
+            >
+              <button class="bg-primary text-white px-6 py-2 !rounded-button">
+                Play Now
+              </button>
+            </div>
+          </div>
+          <div
+            class="game-card card relative min-w-[300px] rounded-lg overflow-hidden shadow-lg"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/26aa9e261831f599025a413453064efc.jpg"
+              class="w-full h-48 object-cover"
+              alt="Game 2"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-semibold">Cyber Racer</h3>
+              <p class="text-theme-secondary">4.6 ★ | 35K+ Players</p>
+            </div>
+            <div
+              class="play-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity flex items-center justify-center"
+            >
+              <button class="bg-primary text-white px-6 py-2 !rounded-button">
+                Play Now
+              </button>
+            </div>
+          </div>
+          <div
+            class="game-card card relative min-w-[300px] rounded-lg overflow-hidden shadow-lg"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/339ae0a263755efd3c6c351ee75f0e50.jpg"
+              class="w-full h-48 object-cover"
+              alt="Game 3"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-semibold">Puzzle Master</h3>
+              <p class="text-theme-secondary">4.7 ★ | 45K+ Players</p>
+            </div>
+            <div
+              class="play-overlay absolute inset-0 bg-black/60 opacity-0 transition-opacity flex items-center justify-center"
+            >
+              <button class="bg-primary text-white px-6 py-2 !rounded-button">
+                Play Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between mb-12">
+          <h2 class="text-4xl font-bold">Game Categories</h2>
+          <button class="text-primary hover:text-primary/80 flex items-center">
+            View All
+            <i class="ri-arrow-right-line ml-1"></i>
+          </button>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-sword-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Action</h3>
+            <p class="text-theme-secondary text-sm">150+ Games</p>
+          </div>
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-map-pin-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Adventure</h3>
+            <p class="text-theme-secondary text-sm">120+ Games</p>
+          </div>
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-puzzle-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Puzzle</h3>
+            <p class="text-theme-secondary text-sm">200+ Games</p>
+          </div>
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-steering-2-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Racing</h3>
+            <p class="text-theme-secondary text-sm">80+ Games</p>
+          </div>
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-team-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Multiplayer</h3>
+            <p class="text-theme-secondary text-sm">100+ Games</p>
+          </div>
+          <div
+            class="category-card card p-6 rounded-lg shadow-lg text-center transition-transform cursor-pointer hover:shadow-xl"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center"
+            >
+              <i class="ri-gamepad-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-semibold">Sports</h3>
+            <p class="text-theme-secondary text-sm">90+ Games</p>
+          </div>
+        </div>
+        <div
+          class="mt-12 bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-8"
+        >
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0">
+              <h3 class="text-2xl font-bold mb-2">Ready to Explore ?</h3>
+              <p class="text-theme-secondary">
+                Join millions of players and start your gaming journey today!
+              </p>
+            </div>
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 whitespace-nowrap"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24 bg-theme-secondary">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center">
+          Featured Game of the Week
+        </h2>
+        <div class="card rounded-lg shadow-lg overflow-hidden">
+          <div class="md:flex">
+            <div class="md:w-1/2">
+              <img
+                src="Images/Gta 5.jpg"
+                class="w-full h-full object-cover"
+                alt="Featured Game"
+              />
+            </div>
+            <div class="md:w-1/2 p-8">
+              <h3 class="text-2xl font-bold mb-4">Gta 5</h3>
+              <div class="flex items-center mb-4">
+                <span class="text-yellow-400">★★★★★</span>
+                <span class="ml-2 text-gray-600">4.9 | 100K+ Players</span>
+              </div>
+              <p class="text-gray-600 mb-6">
+                Grand Theft Auto V is not only a preposterously enjoyable video game, but also an intelligent and sharp-tongued satire of contemporary America.
+              </p>
+              <a href="https://www.youtube.com/watch?v=QkkoHAzjnUs" 
+              class="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary/90 inline-block text-center">
+             Watch Now
+           </a>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="md:flex md:space-x-8">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h2 class="text-4xl font-bold mb-12">Top Players</h2>
+            <div class="card rounded-lg shadow-lg p-6">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                    >
+                      <i class="ri-user-line text-primary"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h3 class="font-semibold">Rahul Sharma</h3>
+                      <p class="text-theme-secondary">Score: 25,890</p>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-bold text-primary">#1</div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                    >
+                      <i class="ri-user-line text-primary"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h3 class="font-semibold">Priya Patel</h3>
+                      <p class="text-theme-secondary">Score: 24,750</p>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-bold text-primary">#2</div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"
+                    >
+                      <i class="ri-user-line text-primary"></i>
+                    </div>
+                    <div class="ml-4">
+                      <h3 class="font-semibold">Amit Kumar</h3>
+                      <p class="text-theme-secondary">Score: 23,500</p>
+                    </div>
+                  </div>
+                  <div class="text-2xl font-bold text-primary">#3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-4xl font-bold mb-12">Recent Reviews</h2>
+            <div class="card rounded-lg shadow-lg p-6">
+              <div class="space-y-6">
+                <div class="border-b pb-4">
+                  <div class="flex items-center mb-2">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"
+                    >
+                      <i class="ri-user-line text-primary"></i>
+                    </div>
+                    <div class="ml-3">
+                      <h3 class="font-semibold">नेहा गुप्ता</h3>
+                      <div class="text-yellow-400">★★★★★</div>
+                    </div>
+                  </div>
+                  <p class="text-theme-secondary">
+                    बहुत ही शानदार गेम! ग्राफिक्स और गेमप्ले दोनों बेहतरीन हैं।
+                  </p>
+                </div>
+                <div class="border-b pb-4">
+                  <div class="flex items-center mb-2">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center"
+                    >
+                      <i class="ri-user-line text-primary"></i>
+                    </div>
+                    <div class="ml-3">
+                      <h3 class="font-semibold">विकास सिंह</h3>
+                      <div class="text-yellow-400">★★★★☆</div>
+                    </div>
+                  </div>
+                  <p class="text-theme-secondary">
+                    मजेदार गेम, लेकिन कुछ लेवल थोड़े मुश्किल हैं।
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-24">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">About GameFox</h3>
+            <p class="text-gray-400">India's Largest Online Gaming Platform</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Games</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Leaderboard</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Copyright</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=AffyTKVuA5_r3Cr_7OCSEiGEugHJI6Ll-KOUyaYENfudIez6BXOCxWZFg1BIkJuFPBP1uuxdDCvnmSRI7Nk2TKK7SFzrvmVtNztjhixIGLke9w&smuh=57402&lh=Ac87WnyQL32BH_GDJ8w"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="https://x.com/i/flow/login?lang=en"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/accounts/login/?hl=en"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2025 GameFox. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
