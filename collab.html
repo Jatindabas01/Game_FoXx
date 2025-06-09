@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamefox x Music Collaboration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#8A2BE2',secondary:'#FF6B6B'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #0f0f1a;
+color: #ffffff;
+}
+.sound-wave {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.3;
+background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.5)),
+url('https://readdy.ai/api/search-image?query=abstract%20digital%20sound%20wave%20visualization%20with%20neon%20purple%20and%20blue%20colors%2C%20dark%20background%2C%20futuristic%20audio%20waveform%20pattern%2C%20music%20visualization%20concept%2C%20high%20tech%2C%20gaming%20aesthetic%2C%20glowing%20lines%2C%20electronic%20music%20visual%2C%20dark%20theme%20with%20vibrant%20accents&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.neon-glow {
+text-shadow: 0 0 5px rgba(138, 43, 226, 0.5),
+0 0 10px rgba(138, 43, 226, 0.5),
+0 0 15px rgba(138, 43, 226, 0.5);
+}
+.neon-border {
+box-shadow: 0 0 5px rgba(138, 43, 226, 0.5),
+0 0 10px rgba(138, 43, 226, 0.5);
+}
+.genre-card {
+transition: all 0.3s ease;
+background-size: cover;
+background-position: center;
+}
+.genre-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+}
+.explore-btn {
+position: relative;
+overflow: hidden;
+transition: all 0.3s ease;
+}
+.explore-btn:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+}
+.explore-btn::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+transition: 0.5s;
+}
+.explore-btn:hover::before {
+left: 100%;
+}
+input:focus {
+outline: none;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+animation: fadeIn 0.8s ease forwards;
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+</style>
+</head>
+<body>
+<div class="min-h-screen flex flex-col">
+<!-- Background with sound wave effect -->
+<div class="sound-wave"></div>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<!-- Header Navigation -->
+<header class="w-full py-4 px-6 md:px-12 z-10">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+<nav class="flex justify-between items-center">
+  <div class="text-2xl text-white" style="font-family: 'Orbitron', sans-serif;">
+    Game Fox
+  </div>
+
+<div class="flex items-center">
+<button class="bg-primary text-white px-6 py-2.5 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-all transform hover:scale-105 flex items-center gap-2">
+<i class="ri-music-2-line"></i>
+Music
+</button>
+</div>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="flex-grow z-10 px-6 md:px-12 py-8 md:py-16">
+<!-- Hero Section -->
+<section class="max-w-6xl mx-auto text-center mb-16 opacity-0 fade-in">
+<h2 class="text-3xl md:text-5xl font-bold mb-6 neon-glow">
+🎧 Powered by Beats | Gamefox x Spodcast
+</h2>
+<div class="max-w-3xl mx-auto bg-black/30 backdrop-blur-sm p-6 rounded-lg">
+<p class="text-lg md:text-xl text-gray-200 mb-8">
+Gamefox is now vibing with Spodcast – bringing gamers and music lovers together! Dive into a world of beats while you play.
+</p>
+<a href="https://spodcast.vercel.app/index.html" class="inline-block explore-btn bg-primary text-white font-bold px-8 py-4 !rounded-button whitespace-nowrap neon-border">
+Explore Music
+</a>
+</div>
+</section>
+<!-- Project Success & Upcoming Section -->
+<section class="max-w-6xl mx-auto mb-16 opacity-0 fade-in delay-1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-black/30 backdrop-blur-sm rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4">
+<i class="ri-trophy-line ri-2x"></i>
+</div>
+<h2 class="text-2xl font-bold">Project Success</h2>
+</div>
+<div class="space-y-6">
+<div class="flex items-center">
+<div class="w-16 text-3xl font-bold text-primary">2M+</div>
+<div class="ml-4">
+<h3 class="font-semibold">Active Users</h3>
+<p class="text-sm text-gray-300">Monthly active gamers enjoying our music</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-16 text-3xl font-bold text-primary">500+</div>
+<div class="ml-4">
+<h3 class="font-semibold">Game Titles</h3>
+<p class="text-sm text-gray-300">Integrated with our music platform</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-16 text-3xl font-bold text-primary">98%</div>
+<div class="ml-4">
+<h3 class="font-semibold">Satisfaction</h3>
+<p class="text-sm text-gray-300">From our gaming community</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-black/30 backdrop-blur-sm rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mr-4">
+<i class="ri-rocket-line ri-2x"></i>
+</div>
+<h2 class="text-2xl font-bold">Upcoming Projects</h2>
+</div>
+<div class="space-y-6">
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+<h3 class="font-semibold mb-2">AI-Powered Music Recommendations</h3>
+<p class="text-sm text-gray-300">Launching in Q3 2025 - Personalized gaming soundtracks based on your playstyle</p>
+</div>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+<h3 class="font-semibold mb-2">Cross-Platform Integration</h3>
+<p class="text-sm text-gray-300">Coming Q4 2025 - Seamless music sync across all gaming platforms</p>
+</div>
+<div class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-3 before:w-2 before:h-2 before:bg-primary before:rounded-full">
+<h3 class="font-semibold mb-2">Live Concert Series</h3>
+<p class="text-sm text-gray-300">Starting 2026 - Virtual concerts featuring game music artists</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Exclusive Content Section -->
+<section class="max-w-6xl mx-auto mb-16 opacity-0 fade-in delay-2">
+<div class="bg-black/40 backdrop-blur-sm rounded-lg p-8 md:p-12">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+<h2 class="text-3xl font-bold mb-4">Exclusive Game Soundtracks</h2>
+<p class="text-gray-300 mb-6">
+Access exclusive music tracks created specifically for your favorite games. Our collaboration with Spodcast brings you original compositions from top artists in the gaming industry.
+</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-3 py-1 bg-primary/20 text-white rounded-full text-sm">New Releases</span>
+<span class="px-3 py-1 bg-primary/20 text-white rounded-full text-sm">Exclusive Content</span>
+<span class="px-3 py-1 bg-primary/20 text-white rounded-full text-sm">Limited Edition</span>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<div class="aspect-video rounded-lg overflow-hidden">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=professional%20music%20studio%20setup%20with%20gaming%20elements%2C%20mixing%20console%2C%20headphones%2C%20computer%20screens%20showing%20game%20development%2C%20atmospheric%20lighting%2C%20high-end%20audio%20equipment%2C%20music%20production%20environment%20with%20gaming%20aesthetic&width=800&height=450&seq=6&orientation=landscape');" class="w-full h-full bg-cover bg-center"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/80 rounded-full cursor-pointer hover:bg-primary transition-colors">
+<i class="ri-play-fill ri-2x"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Artists Section -->
+<section class="max-w-6xl mx-auto mb-16 opacity-0 fade-in delay-3">
+<h2 class="text-3xl font-bold mb-8 text-center">Featured Artists</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-black/30 backdrop-blur-sm rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=professional%20electronic%20music%20producer%20in%20studio%20with%20headphones%2C%20dramatic%20lighting%2C%20artistic%20portrait%2C%20music%20production%20environment%2C%20serious%20expression%2C%20high%20contrast%20lighting%2C%20professional%20musician&width=600&height=400&seq=7&orientation=landscape');" class="w-full h-full bg-cover bg-center"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Alex Nightshade</h3>
+<p class="text-gray-300 text-sm mb-4">Electronic music producer known for creating immersive soundscapes for RPG games.</p>
+<div class="flex justify-between items-center">
+<div class="flex space-x-2">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-spotify-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-youtube-fill ri-lg"></i>
+</div>
+</div>
+<button class="text-sm text-primary font-medium">View Profile</button>
+</div>
+</div>
+</div>
+<div class="bg-black/30 backdrop-blur-sm rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=female%20DJ%20with%20colorful%20hair%20performing%20at%20gaming%20event%2C%20vibrant%20lighting%2C%20energetic%20pose%2C%20headphones%2C%20mixing%20equipment%2C%20gaming%20convention%20atmosphere%2C%20professional%20musician&width=600&height=400&seq=8&orientation=landscape');" class="w-full h-full bg-cover bg-center"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Mia Voltage</h3>
+<p class="text-gray-300 text-sm mb-4">DJ and composer specializing in high-energy tracks for action and racing games.</p>
+<div class="flex justify-between items-center">
+<div class="flex space-x-2">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-spotify-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-instagram-fill ri-lg"></i>
+</div>
+</div>
+<button class="text-sm text-primary font-medium">View Profile</button>
+</div>
+</div>
+</div>
+<div class="bg-black/30 backdrop-blur-sm rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=orchestral%20composer%20conducting%20with%20gaming%20elements%20in%20background%2C%20professional%20classical%20musician%2C%20dramatic%20lighting%2C%20orchestra%20setting%2C%20serious%20expression%2C%20cinematic%20atmosphere%2C%20professional%20musician&width=600&height=400&seq=9&orientation=landscape');" class="w-full h-full bg-cover bg-center"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Richard Harmony</h3>
+<p class="text-gray-300 text-sm mb-4">Orchestral composer who has created award-winning scores for epic adventure games.</p>
+<div class="flex justify-between items-center">
+<div class="flex space-x-2">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-spotify-fill ri-lg"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-full">
+<i class="ri-soundcloud-fill ri-lg"></i>
+</div>
+</div>
+<button class="text-sm text-primary font-medium">View Profile</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-6xl mx-auto mb-16 opacity-0 fade-in delay-4">
+<div class="bg-black/40 backdrop-blur-sm rounded-lg p-8 md:p-12 text-center">
+<h2 class="text-3xl font-bold mb-4">Stay in the Loop</h2>
+<p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+Subscribe to our newsletter to get updates on exclusive music releases, artist collaborations, and special in-game music events.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 bg-white/10 border-none !rounded-button text-white placeholder-gray-400">
+<button class="bg-primary text-white font-semibold px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">
+Subscribe
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 px-6 md:px-12 z-10 border-t border-white/10">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-8">
+<div class="h-px w-32 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"></div>
+<p class="text-gray-300">
+In Collaboration with Spodcast | Stay Tuned for Exclusive Soundtracks
+</p>
+</div>
+<div class="flex justify-between items-center">
+  <div class="text-2xl text-white" style="font-family: 'Orbitron', sans-serif;">
+    Game Fox
+  </div>
+
+<div class="flex space-x-6 mb-4 md:mb-0">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-fill ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill ri-lg"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-discord-fill ri-lg"></i>
+</div>
+</a>
+</div>
+<div class="text-sm text-gray-400">
+© 2025 Gamefox. All rights reserved.
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script id="animation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+fadeElements.forEach(element => {
+element.style.opacity = '1';
+});
+});
+</script>
+</body>
+</html>
